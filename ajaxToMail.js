@@ -44,8 +44,9 @@ $('form').submit(function (event){
                     
                 }
 			},
-			error: function (request, status, error) {
+			error: function (response, status, error) {
                 $('#quick').modal("hide");
+		console.error("This is the error "+ response.responseText)         // Instead of printing error we are printing response value from object (response.responseText)  to avaoid (Error: syntaxerror unexpected token t in json at position 0)
                 var name=$('.name').val('');
                     var email=$('.email').val('');
                     var msg=$('.msg').val('');
